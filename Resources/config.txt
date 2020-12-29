@@ -1,0 +1,1 @@
+[{"ArquivoSom":"336500__robinhood76__06356-vibe-message-1.wav","Voz":"Fernanda","Volume":80,"WebSocketURL":"wss://echo.websocket.org","DateSenhas":"28/12/2020"}]

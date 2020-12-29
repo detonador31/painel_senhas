@@ -50,6 +50,8 @@ namespace PainelDeSenhas
             this.TxtLocal = new System.Windows.Forms.TextBox();
             this.TxtLocalNum = new System.Windows.Forms.TextBox();
             this.BtnEnviar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbTime = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -58,8 +60,6 @@ namespace PainelDeSenhas
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -294,6 +294,23 @@ namespace PainelDeSenhas
             this.BtnEnviar.UseVisualStyleBackColor = true;
             this.BtnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbTime
+            // 
+            this.lbTime.BackColor = System.Drawing.Color.White;
+            this.lbTime.Font = new System.Drawing.Font("Arial", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbTime.Location = new System.Drawing.Point(969, 676);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(322, 92);
+            this.lbTime.TabIndex = 25;
+            this.lbTime.Text = "14:20:10";
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::PainelDeSenhas.Properties.Resources.logoPainelSenhaMenorAinda;
@@ -368,23 +385,6 @@ namespace PainelDeSenhas
             this.pictureBox7.Size = new System.Drawing.Size(868, 50);
             this.pictureBox7.TabIndex = 21;
             this.pictureBox7.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbTime
-            // 
-            this.lbTime.BackColor = System.Drawing.Color.White;
-            this.lbTime.Font = new System.Drawing.Font("Arial", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbTime.Location = new System.Drawing.Point(969, 676);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(322, 92);
-            this.lbTime.TabIndex = 25;
-            this.lbTime.Text = "14:20:10";
             // 
             // TelaInicial
             // 

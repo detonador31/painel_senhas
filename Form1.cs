@@ -97,8 +97,15 @@ namespace PainelDeSenhas
         /// </summary>
         /// <param name="senhas">Lista de Senhas</param> 
         private void CarregarSenhas() {
-            var json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\senhas.json");
-            JsonSenhas = ConvertTextSenhasToJson(json);
+            try
+            {
+                var json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\senhas.json");
+                JsonSenhas = ConvertTextSenhasToJson(json);
+            }
+            catch {
+                JsonSenhas = new List<Senha>();
+            }
+
             // Verifica se a data é diferente da atual, se verdadeiro zera o arquivo senhas.json
             Boolean checkdate = CheckDateSenhas();
             if (checkdate)
@@ -119,8 +126,15 @@ namespace PainelDeSenhas
         /// <param name="senhas">Lista de Senhas</param> 
         Boolean CheckDateSenhas()
         {
-            var json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\config.json");
-            config = ConvertTextConfigToJson(json);
+            try
+            {
+                var json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\config.json");
+                config = ConvertTextConfigToJson(json);
+            }
+            catch {
+                geraConfigJson();
+            }
+
 
             if (config.DateSenhas != string.Empty)
             {
@@ -140,6 +154,32 @@ namespace PainelDeSenhas
 
             return false;
         }
+
+        /// <summary>
+        /// Gera com valores padrões caso não exista
+        /// @author Silvio Watakabe silvio@tcmed.com.br
+        /// @since 29-12-2020
+        /// @version 1.0
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">EventArgs e</param>
+        private void geraConfigJson()
+        {
+            Config newConfig = new Config();
+            newConfig.ArquivoSom   = "336500__robinhood76__06356-vibe-message-1.wav";
+            newConfig.Volume       = 80;
+            newConfig.WebSocketURL = "wss://echo.websocket.org";
+            newConfig.Voz          = "Fernanda";
+            newConfig.DateSenhas = DateTime.Now.ToShortDateString();
+            config = newConfig;
+            List<Config> confArray = new List<Config>();
+            confArray.Add(newConfig);
+
+            var json_serializado = JsonConvert.SerializeObject(confArray);
+
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\config.json", json_serializado);
+        }
+
 
         /// <summary>
         /// Carrega os Labels de senhas conforme a quantidade de senhas disponiveis
