@@ -48,13 +48,13 @@ O projeto utiliza as seguintes bibliotecas e pacotes:
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 
-2. **Abra o projeto no Visual Studio (ou outro editor compatível com C#).
+2. **Abra o projeto no Visual Studio (ou outro editor compatível com C#).**
 
-3. **Configure o endereço do WebSocket no arquivo de configuração ou no código (dependendo da implementação).
+3. **Configure o endereço do WebSocket no arquivo de configuração ou no código (dependendo da implementação).**
 
-4. **Compile e execute o projeto.
+4. **Compile e execute o projeto.**
 
-5. ** A aplicação se conectará ao servidor e exibirá as senhas chamadas em tempo real.
+5. **A aplicação se conectará ao servidor e exibirá as senhas chamadas em tempo real.**
 
 ## 🤝 Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue com sugestões, bugs ou melhorias, ou enviar um pull request.
